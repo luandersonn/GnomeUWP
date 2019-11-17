@@ -237,7 +237,7 @@
                                            HorizontalAlignment="Center"
                                            Stretch="Uniform">
                                         <Image.Source>
-                                            <BitmapImage DecodePixelHeight="320" UriSource="Gnome laptop.png" />
+                                            <BitmapImage DecodePixelHeight="320" UriSource="Assets\Gnome laptop.png" />
                                         </Image.Source>
                                     </Image>
                                     <local:GnomeLogo Height="130"

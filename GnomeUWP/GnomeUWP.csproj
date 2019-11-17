@@ -7,9 +7,9 @@
     <ProjectGuid>{52E2FE53-2B18-4396-8B8A-411F22DD7B14}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WinUI</RootNamespace>
-    <AssemblyName>WinUI</AssemblyName>
-    <DefaultLanguage>pt-BR</DefaultLanguage>
+    <RootNamespace>GnomeUWP</RootNamespace>
+    <AssemblyName>GnomeUWP</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.18362.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.18362.0</TargetPlatformMinVersion>

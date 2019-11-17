@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Linq;
 using Windows.ApplicationModel.Core;
 using Windows.UI;
@@ -16,7 +15,7 @@ namespace GnomeFun
 		private ObservableProperty<string> DeviceName { get; } = new ObservableProperty<string>();
 		private ObservableProperty<string> Storage { get; } = new ObservableProperty<string>();
 		private ObservableProperty<string> SystemType { get; } = new ObservableProperty<string>();
-		
+
 		public MainPage()
 		{
 			InitializeComponent();
@@ -38,8 +37,6 @@ namespace GnomeFun
 			ThemeButton.Content = ActualTheme == ElementTheme.Dark ? "\uE708" : "\uE706";
 		}
 
-
-
 		protected async override void OnNavigatedTo(NavigationEventArgs e)
 		{
 			if (splitView.IsPaneOpen)
@@ -57,7 +54,7 @@ namespace GnomeFun
 				column3.Width = new GridLength(0);
 			}
 
-			SideBarItem[] items = new SideBarItem[]
+			var items = new SideBarItem[]
 			{
 				new SideBarItem("Wi-FI", "\uE701", 0),
 				new SideBarItem("Bluetooth", "\uE702", 0),
@@ -78,11 +75,9 @@ namespace GnomeFun
 			};
 			GroupedItems.Source = from itemMenu in items
 								  group itemMenu by itemMenu.Group;
-			//foreach (var sideBarItem in items)
-			//SideBarItemsList.Add(sideBarItem);
-
+			
 			DeviceModelName.Property = $"{Info.DeviceManufacturer} {Info.DeviceModel}";
-			DeviceName.Property = Environment.MachineName;			
+			DeviceName.Property = Environment.MachineName;
 			Storage.Property = await Info.GetStorageCapacityAsync();
 			SystemType.Property = Environment.Is64BitOperatingSystem ? "64 bits" : "32 bits";
 		}
@@ -119,9 +114,9 @@ namespace GnomeFun
 
 		private void ThemeButtonClick(object sender, RoutedEventArgs e)
 		{
-			RequestedTheme = RequestedTheme == Windows.UI.Xaml.ElementTheme.Dark
-				? Windows.UI.Xaml.ElementTheme.Light
-				: Windows.UI.Xaml.ElementTheme.Dark;
+			RequestedTheme = RequestedTheme == ElementTheme.Dark
+				? ElementTheme.Light
+				: ElementTheme.Dark;
 		}
 
 
